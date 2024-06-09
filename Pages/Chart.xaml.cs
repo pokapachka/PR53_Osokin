@@ -27,10 +27,11 @@ namespace ПР53_Осокин.Pages
         public double averageValue = 0;
         public DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
-        public Chart(MainWindow mainWindow)
+        public Chart(MainWindow mainWindow, ChartContext _chartContext)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
+            chartContext = _chartContext;
             actualHeightCanvas = (mainWindow.Height / 2) - 50d;
             dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
             dispatcherTimer.Tick += CreateNewValue;
